@@ -21,7 +21,7 @@ export function Dashboard() {
 
   // Retrieve the JSON data on initial render
   useEffect(() => {
-    fetch("/data.json")
+    fetch(`${import.meta.env.BASE_URL}data.json`)
       .then((d) => d.json())
       .then((j) => {
         const newData = j as TimeTrackingData[];
@@ -127,7 +127,10 @@ export function Dashboard() {
     <div className="dashboard">
       <div className="profile">
         <div className="person-info">
-          <img src="/image-jeremy.png" alt="Jeremy Robson picture" />
+          <img
+            src={`${import.meta.env.BASE_URL}image-jeremy.png`}
+            alt="Jeremy Robson picture"
+          />
           <div className="info-for">
             <h2>Report for</h2>
             <h1>Jeremy Robson</h1>

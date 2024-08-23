@@ -12,7 +12,7 @@ export function Timecard({
   isTyping,
 }: TimecardProps) {
   const typeLower = type.toLowerCase().replace(" ", "-");
-  const imgsrc = `/icon-${typeLower}.svg`;
+  const imgsrc = `${import.meta.env.BASE_URL}icon-${typeLower}.svg`;
   return (
     <div className={`timecard ${typeLower}`}>
       <div className="timecard-filler">
